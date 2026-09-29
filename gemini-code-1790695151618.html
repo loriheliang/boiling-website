@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沸点心理咨询（上海）有限公司 - 官方网站</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+        body {
+            color: #333;
+            background-color: #fdfbf7;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* 导航栏 */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c5e55;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #2c5e55;
+        }
+
+        /* 轮播/横幅 (Hero) */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, #e8f0ec 0%, #fdfbf7 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #1e3d37;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .btn-primary {
+            display: inline-block;
+            background-color: #2c5e55;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #1e3d37;
+        }
+
+        /* 通用板块样式 */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #2c5e55;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #8bb1a4;
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* 关于机构 */
+        .about-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* 咨询师介绍卡片 */
+        .therapist-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 2.5rem;
+        }
+        @media (min-width: 768px) {
+            .therapist-card {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
+        .therapist-img {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .therapist-info {
+            flex: 1;
+        }
+        .therapist-header {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+        }
+        .therapist-name {
+            font-size: 2rem;
+            color: #2c5e55;
+            display: inline-block;
+            margin-right: 1rem;
+        }
+        .therapist-title {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 500;
+        }
+        .qualification-tag {
+            display: inline-block;
+            background-color: #e8f0ec;
+            color: #2c5e55;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        .info-block {
+            margin-bottom: 1.5rem;
+        }
+        .info-block h4 {
+            color: #2c5e55;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .info-block ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .info-block li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.4rem;
+            color: #555;
+        }
+        .info-block li::before {
+            content: "•";
+            color: #8bb1a4;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* 预约与设置 */
+        .booking-box {
+            background-color: #f4f8f6;
+            border-left: 4px solid #2c5e55;
+            padding: 1.2rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 1.5rem;
+        }
+        .booking-box p {
+            margin-bottom: 0.3rem;
+            color: #444;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #1e3d37;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+        footer p {
+            color: #a3c2b8;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">沸点心理咨询（上海）有限公司</div>
+            <ul class="nav-links">
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#therapist">专家团队</a></li>
+                <li><a href="#contact">预约咨询</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 主视觉 / 横幅 -->
+    <section class="hero">
+        <h1>沸点心理咨询（上海）有限公司</h1>
+        <p>专业、严谨、温暖的心理咨询与精神分析服务，陪您探索内心，重建生命的力量。</p>
+        <a href="#contact" class="btn-primary">预约咨询</a>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="section">
+        <h2 class="section-title">关于我们</h2>
+        <div class="about-content">
+            <p>沸点心理咨询（上海）有限公司致力于提供高标准的心理健康服务与专业心理咨询。我们汇聚具备资深系统受训背景与丰富临床经验的心理师，秉持专业、尊重、保密的原则，为来访者提供个案心理咨询、督导及专业心理支持，帮助每一个生命寻找内心的平静与成长。</p>
+        </div>
+    </section>
+
+    <!-- 咨询师团队 -->
+    <section id="therapist" class="section">
+        <h2 class="section-title">咨询师介绍</h2>
+        <div class="therapist-card">
+            <!-- 咨询师照片 -->
+            <img src="https://lh3.googleusercontent.com/chat_attachment/AEC3ebR-7N0Rz6hXqD9d8_hWByxOIn17d4m1OlyzS2xXl2vH983U58v1rZk5Q8nL0W-lD1J8y3A=s1024" alt="何良 心理师" class="therapist-img">
+            
+            <!-- 咨询师详细信息 -->
+            <div class="therapist-info">
+                <div class="therapist-header">
+                    <div>
+                        <span class="therapist-name">何良</span>
+                        <span class="therapist-title">资深心理咨询师 / 临床心理学硕士</span>
+                    </div>
+                    <div class="qualification-tag">
+                        中国心理学会临床与咨询心理学专业人员与机构注册系统注册心理师（注册号：X-11-005）
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h4>学历背景</h4>
+                    <ul>
+                        <li>华东师范大学 临床心理学硕士</li>
+                    </ul>
+                </div>
+
+                <div class="info-block">
+                    <h4>系统训练背景</h4>
+                    <ul>
+                        <li>芝加哥精神分析学院分析师培训项目毕业（2017-2025）</li>
+                        <li>第二届中法精神分析连续培训项目（2023/9-2025/6）</li>
+                        <li>中美人格障碍连续培训项目第1-2期（2021/3-2022/6）</li>
+                        <li>东方明见第五期督导系列培训项目（2018/12-2019/12）</li>
+                        <li>上海市精神卫生中心临床心理科进修项目（2018/8-2019/2）</li>
+                        <li>中美精神分析联盟（CAPA）连续培训项目（初级、高级、督导）（2008-2017）</li>
+                        <li>中德精神分析系列培训项目（初级、高级）（2011-2016）[cite: 1]</li>
+                        <li>中美认知行为疗法系列培训项目（2009-2012）[cite: 1]</li>
+                        <li>方新现代行为治疗连续培训项目（2011-2012）[cite: 1]</li>
+                        <li>中德催眠疗法系列培训项目（2009-2010）[cite: 1]</li>
+                        <li>首届精神分析自体班连续培训项目（2007-2010）[cite: 1]</li>
+                    </ul>
+                </div>
+
+                <div class="info-block">
+                    <h4>从业经验</h4>
+                    <ul>
+                        <li>自 2005 年起持续从事临床心理咨询工作，积累了极其丰富的临床经验[cite: 1]。</li>
+                    </ul>
+                </div>
+
+                <!-- 预约信息 -->
+                <div id="contact" class="booking-box">
+                    <h4>工作设置与预约方式</h4>
+                    <p><strong>工作设置：</strong>线上视频咨询 / 督导[cite: 1]</p>
+                    <p><strong>预约邮箱：</strong><a href="mailto:loriheliang@gmail.com" style="color:#2c5e55; text-decoration:underline;">loriheliang@gmail.com</a>[cite: 1]</p>
+                    <p><strong>咨询费用：</strong>费用面议[cite: 1]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2026 沸点心理咨询（上海）有限公司 版权所有[cite: 1]</p>
+    </footer>
+
+</body>
+</html>
